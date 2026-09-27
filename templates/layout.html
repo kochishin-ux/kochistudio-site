@@ -29,5 +29,15 @@
 <footer class="bottom">
   <div class="wrap"><span>© 河内スタヂオ</span><span>〒010-0445 秋田県南秋田郡大潟村西2-2-35</span></div>
 </footer>
+<script>
+// メールアドレスはロボットに読まれにくいよう、表示するときに組み立てる
+document.querySelectorAll('.mail').forEach(function (el) {
+  var addr = el.dataset.u + '@' + el.dataset.d;
+  var a = document.createElement('a');
+  a.href = 'mailto:' + addr;
+  a.textContent = addr;
+  el.replaceChildren(a);
+});
+</script>
 </body>
 </html>
